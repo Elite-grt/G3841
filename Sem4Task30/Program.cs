@@ -1,71 +1,41 @@
-﻿// //Задача №30
-// //Напишите программу, которая выводит массив из 8 элементов, 
-// //заполненный нулями и единицами в случайном порядке.
+﻿//Задача №30
+//Напишите программу, которая выводит массив из 8 элементов, 
+//заполненный нулями и единицами в случайном порядке.
 
-// //Метод читает данные от пользователя
-// int ReadData(string msg)
-// {
-//     Console.WriteLine(msg);
-//     return int.Parse(Console.ReadLine() ?? "0");
-// }
-
-// int[] Gen1DArr(int num, int begin, int end)
-// {
-//     Random rnd = new Random();
-//     int[] arr = new int[num];
-//     for (int i = 0; i < arr.Length; i++)
-//     {
-//         arr[i] = rnd.Next(begin, end);
-//     }
-//     return arr;
-// }
-
-// void Print1DArr(int[] arr)
-// {
-//     Console.Write("[");
-//     for (int i = 0; i < arr.Length-1; i++)
-//     {
-//         Console.Write(arr[i]+", ");
-//     }
-//     Console.WriteLine(arr[arr.Length-1]+"]");
-// }
-
-// int arrLen = ReadData("Введите длину массива.");
-
-// int[] arr = Gen1DArr(arrLen, 0, 2);
-
-// Print1DArr(arr);
-
-int InputNum(string msg)
+//Метод читает данные от пользователя
+int ReadData(string msg)
 {
-    Console.Write(msg);
+    Console.WriteLine(msg);
     return int.Parse(Console.ReadLine() ?? "0");
 }
-int xlen = InputNum("Ваше число X: ");
-int ylen = InputNum("Ваше число Y: ");
-Random rnd = new Random();
-int[,] createArray(int xlen, int ylen)
+
+// Метод для генерация одномерного массива 
+int[] Gen1DArr(int num, int begin, int end)
 {
-    int[,] arr = new int[xlen, ylen];
-    for (int i = 0; i < xlen; i++)
+    Random rnd = new Random(); // генератор рандом
+    int[] arr = new int[num]; // указываем длину массива
+    for (int i = 0; i < arr.Length; i++)
     {
-        for (int j = 0; j < ylen; j++)
-        {
-            arr[i, j] = rnd.Next(-999, 999);
-        }
+        arr[i] = rnd.Next(begin, end); // обращаемся к каждому элементу масива
     }
     return arr;
 }
-void showArray(int[,] arr)
+
+// Метод жля печати одномерного массива
+void Print1DArr(int[] arr)
 {
-    for (int i = 0; i < xlen; i++)
+    Console.Write("["); // Указваем [ скобочку в начале
+    for (int i = 0; i < arr.Length-1; i++)
     {
-        for (int j = 0; j < ylen; j++)
-        {
-            
-        Console.Write(arr[i,j]+"\t");
-        }
-        Console.WriteLine("");
+        Console.Write(arr[i]+", ");
     }
+    Console.WriteLine(arr[arr.Length-1]+"]"); // Указываем в конце последний элемент массива без запятой (arr.Length-1) и добавляем ] скобку
 }
-showArray(createArray(xlen, ylen));
+
+int arrLen = ReadData("Введите длину массива."); // узнам длиину массива
+
+int[] arr = Gen1DArr(arrLen, 0, 2);
+
+Print1DArr(arr);
+
+

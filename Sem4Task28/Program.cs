@@ -1,5 +1,7 @@
 ﻿// Задача №28
-// Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
+// Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N. - это факториал
+
+// Для распознания 
 using System.Numerics;
 
 //Метод читает данные от пользователя
@@ -17,7 +19,7 @@ void PrintData(string msg1, BigInteger msg2)
 
 BigInteger CalcFact(int num)
 {
-    BigInteger res=1;
+    BigInteger res=1; // Создаем переменную
     for(int i=1;i<=num;i++)
     {
         res=res*i;
@@ -25,8 +27,10 @@ BigInteger CalcFact(int num)
     return res;
 }
 
+// Вводим число
 int number = ReadData("Введите число:");
 
+// Счетаем BigInteger
 BigInteger fact = CalcFact(number);
 
 PrintData("Факториал равен: ",fact);
