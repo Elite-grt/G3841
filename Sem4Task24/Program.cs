@@ -4,7 +4,7 @@
 //Метод читает данные от пользователя
 int ReadData(string msg)
 {
-    Console.WriteLine(msg);
+    
     return int.Parse(Console.ReadLine() ?? "0");
 }
 //Выводим результат пользователю
