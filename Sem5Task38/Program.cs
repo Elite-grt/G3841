@@ -22,7 +22,7 @@ void Print1DArr(double[] arr)
     Console.WriteLine(arr[arr.Length - 1] + "]");
 }
 
-double minMax( double[] arr) // Метод нахождения max и min значение элемента массива
+double MinMax( double[] arr) // Метод нахождения max и min значение элемента массива
 {
     double max = double.MinValue;
     double min = double.MaxValue;
@@ -42,5 +42,5 @@ double minMax( double[] arr) // Метод нахождения max и min зн�
 
 double[] testArr = Gen1DArray(10,0,100); // Буферная переменная, куда кладется массив
 Print1DArr(testArr);
-double convArr = minMax(testArr);
+double convArr = MinMax(testArr);
 Console.WriteLine(convArr);
