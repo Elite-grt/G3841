@@ -40,5 +40,5 @@ int SunPos(int[] arr)
 
 int[] testArr = Gen1DArray(7,1,99);  // Сгенеруруем массив
 Print1DArr(testArr);
-int count = CountElem(testArr);
+int count = SunPos(testArr);
 PrintData("Cумму элементов, стоящих на нечётных позициях :"+count);
