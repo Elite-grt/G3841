@@ -37,7 +37,7 @@ double MinMax( double[] arr) // Метод нахождения max и min зн�
             min = arr[i];
         };
     }
-    return (max = min);
+    return (max - min);
 }
 
 double[] testArr = Gen1DArray(10,0,100); // Буферная переменная, куда кладется массив

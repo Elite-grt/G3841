@@ -3,14 +3,14 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-void PrintData(string res)  // Метод для понятия есть ли этот элемент в массиве или нет
+void PrintData(string res)  
 {
     Console.WriteLine(res);
 }
 
-int[] Gen1DArray(int len, int minValue, int maxValue)
+int[] Gen1DArray(int len, int minValue, int maxValue) // Метод для понятия есть ли этот элемент в массиве или нет
 {
-    int[] arr = new int[len]; // Создаем массив
+    int[] arr = new int[len]; // Создаем новый массив с длиной len
     for (int i = 0; i < arr.Length; i++)   // в цикле for  проходим все элементы массива
     {
         arr[i] = new Random().Next(minValue, maxValue + 1); // заполняем max min значения
