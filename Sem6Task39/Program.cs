@@ -9,7 +9,7 @@ Console.WriteLine("Исходны массив");
 Print1DArr(arr);
 
 int[] copyArr = SwapNewArray(arr);
-Console.WriteLine("Нивый массив перевернутый SwapNewArray методом");
+Console.WriteLine("Новый массив перевернутый SwapNewArray методом");
 Print1DArr(copyArr);
 Console.WriteLine("Исходны массив");
 Print1DArr(arr);
