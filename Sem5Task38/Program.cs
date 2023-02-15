@@ -2,7 +2,7 @@
 // и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
-double[] Gen1DArray(int len, int minValue, int maxValue)  // Генерируем вещественные числа
+double[] Gen1DArray(int len, int minValue, int maxValue)  // Генерируем вещественные числа (с плавающей запятой (double))
 {
     double[] arr = new double[len];
     for (int i = 0; i < arr.Length; i++)
