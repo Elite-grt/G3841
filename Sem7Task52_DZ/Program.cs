@@ -61,18 +61,45 @@ void Print2DArr(int[,] arr)
 
 
 
-// Метод для поиска среднеарифметического значения по строке
+// // Метод для поиска среднеарифметического значения по строке
+
+// int[] MeanColum (int[,] arr)
+// {
+//     int[] means = new int[arr.GetLength(0)];
+//     for(int i = 0; i < arr.GetLength(0); i++) // проходим по строкам (0)
+//     {
+//         for(int j = 0; j < arr.GetLength(1); j++) // проходим по столбцам (1)
+//         {
+//             means[i] += arr[i,j]; // накапливаем сумму в means 
+//         }
+//         means [i] = means[i]/arr.GetLength(1); // Делим сумму means на количество столбцов
+//     }
+//     return means;
+// }
+
+// void Print1DArr(int[] arr) // Метод печатания массива. Принимает инвертирование массива
+// {
+//     Console.Write("[");
+//     for (int i = 0; i < arr.Length - 1; i++) // Пробегает по массиву
+//     {
+//         Console.Write(arr[i] + ", ");
+//     }
+//     Console.WriteLine(arr[arr.Length - 1]+"]");
+// }    
+
+
+// Метод для поиска среднеарифметического значения по столбцам
 
 int[] MeanColum (int[,] arr)
 {
-    int[] means = new int[arr.GetLength(0)];
-    for(int i = 0; i < arr.GetLength(0); i++) // проходим по строкам (0)
+    int[] means = new int[arr.GetLength(1)];
+    for(int i = 0; i < arr.GetLength(1); i++) // проходим по столбцам (1)
     {
-        for(int j = 0; j < arr.GetLength(1); j++) // проходим по столбцам (1)
+        for(int j = 0; j < arr.GetLength(0); j++) // проходим по строкам (0)
         {
-            means[i] += arr[i,j]; // накапливаем сумму в means 
+            means[i] += arr[j,i]; // накапливаем сумму в means 
         }
-        means [i] = means[i]/arr.GetLength(1); // Делим сумму means на количество столбцов
+        means [i] = means[i]/arr.GetLength(0); // Делим сумму means на количество строк
     }
     return means;
 }
@@ -93,5 +120,5 @@ int ylen = InputNum("Ваше число строк: ");
 Console.WriteLine(); // Создаем пустую строчку
 int[,] matrix = Gen2DArr(xlen, ylen); // Генерируем 2х мерный массив
 Print2DArr(matrix);
-int[] meansColums = MeanColum(matrix);
+int[] meansColums = MeanColum(matrix); // Генерируем среднеарифметическое значение
 Print1DArr(meansColums); // 
