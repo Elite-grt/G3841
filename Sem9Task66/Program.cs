@@ -18,15 +18,15 @@ void PrintResult(string prefix)
     Console.WriteLine(prefix);
 }
 
-int RecSumMN(int M, int N)
+int RecSumMN(int m, int n)
 {
-    if (M >= N)
+    if (m >= n)
     {
-        return N;
+        return n;
     }
     else
     {
-        return  M + RecSumMN(M +1, N);
+        return  m + RecSumMN(m +1, n);
     }
     
 }
@@ -34,8 +34,8 @@ int RecSumMN(int M, int N)
 
 
 
-int M = ReadData("Введите число M: ");
-int N = ReadData("Введите число N: ");
+int m = ReadData("Введите число M: ");
+int n = ReadData("Введите число N: ");
 
-int res =  M < N? RecSumMN ( M, N):RecSumMN ( N, M); // защита от дурака
+int res =  m < n? RecSumMN ( m, n):RecSumMN ( n, m); // защита от дурака
 PrintResult($"Сумма натуральных чисел = " + res);
